@@ -50,4 +50,14 @@ describe(`Employee`, () => {
         }).toThrow("Invalid input! Please provide a valid name, id number and email address");
     });
 
+    it('returns an object containing name, id and email address', () => {
+        expect(new Employee('Jane Doe', 1, 'test@gmail.com')).toEqual(expect.objectContaining({
+            name: 'Jane Doe',
+            id: 1,
+            email: 'test@gmail.com'
+        }));
+    })
+
+    
+
 });

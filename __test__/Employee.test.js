@@ -60,7 +60,7 @@ describe(`Employee`, () => {
         }));
     });
 
-    //testing if the methods on the employee class return the right output
+    //testing if the methods on the employee class return the correct output
     describe('Employee Methods', () => {
         it('returns the value of the name property when getName is called on the employee object', () => {
             let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
@@ -77,7 +77,7 @@ describe(`Employee`, () => {
             expect(employee.getEmail()).toBe('test@gmail.com');
         });
 
-        it('returns the value of the email property when getEmail is called on the employee object', () => {
+        it('returns "employee" when getRole is called on the employee object', () => {
             let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
             expect(employee.getRole()).toBe('employee');
         });

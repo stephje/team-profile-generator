@@ -1,7 +1,11 @@
-const employeeGenerator = require("../lib/employee.js")
+const Employee = require('../lib/employee.js');
 
-describe(`my-function`, () => {
-    it(`does nothing right now... ;)`, () => {
-        
-    })
-})
+describe(`Employee`, () => {
+
+    it(`throws an error if no input is provided`, () => {
+        expect(()=> {
+            new Employee();
+        }).toThrow("Please provide a name, id and email address");
+    });
+
+});

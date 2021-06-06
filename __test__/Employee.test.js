@@ -2,6 +2,7 @@ const Employee = require('../lib/employee.js');
 
 describe(`Employee`, () => {
 
+    //testing if an error is thrown for various invalid inputs
     it(`throws an error if no input is provided`, () => {
         expect(()=> {
             new Employee();
@@ -50,14 +51,36 @@ describe(`Employee`, () => {
         }).toThrow("Invalid input! Please provide a valid name, id number and email address");
     });
 
+    //testing that an object with the correct properties and values is returned
     it('returns an object containing name, id and email address', () => {
         expect(new Employee('Jane Doe', 1, 'test@gmail.com')).toEqual(expect.objectContaining({
             name: 'Jane Doe',
             id: 1,
             email: 'test@gmail.com'
         }));
-    })
+    });
 
-    
+    //testing if the methods on the employee class return the right output
+    describe('Employee Methods', () => {
+        it('returns the value of the name property when getName is called on the employee object', () => {
+            let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
+            expect(employee.getName()).toBe('Jane Doe');
+        });
+
+        it('returns the value of the id property when getId is called on the employee object', () => {
+            let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
+            expect(employee.getId()).toBe(1);
+        });
+
+        it('returns the value of the email property when getEmail is called on the employee object', () => {
+            let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
+            expect(employee.getEmail()).toBe('test@gmail.com');
+        });
+
+        it('returns the value of the email property when getEmail is called on the employee object', () => {
+            let employee = new Employee('Jane Doe', 1, 'test@gmail.com');
+            expect(employee.getRole()).toBe('employee');
+        });
+    });
 
 });

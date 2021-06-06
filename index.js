@@ -75,7 +75,7 @@ main();
 // Engineer: github username -- DONE
 // intern: school -- DONE
 // 1b. Using information about each member, construct an object representing a team member (these constructors or classes should have tests)
-//i. Write tests for Employee, one test at a time
+//i. Write tests for Employee, one test at a time -- DONE
 //ii. Write tests for Manager
 //iii. Write tests for Intern
 //iv. Write tests for Engineer

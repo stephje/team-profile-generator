@@ -76,9 +76,9 @@ main();
 // intern: school -- DONE
 // 1b. Using information about each member, construct an object representing a team member (these constructors or classes should have tests)
 //i. Write tests for Employee, one test at a time -- DONE
-//ii. Write tests for Manager
-//iii. Write tests for Intern
-//iv. Write tests for Engineer
+//ii. Write tests for Manager -- DONE
+//iii. Write tests for Intern -- DONE
+//iv. Write tests for Engineer -- DONE
 // 1c. Add the new team member object to a collection of team members
 // 1d. Return the collection of team member objects
 

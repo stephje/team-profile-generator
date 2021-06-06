@@ -2,7 +2,7 @@ const Intern = require('../lib/intern.js');
 const Employee = require('../lib/employee.js');
 
 describe('Intern', () => {
-    //testing in an error is thrown for various invalid inputs
+    //testing if an error is thrown for various invalid inputs
     it(`throws an error if no school name is provided`, () => {
         expect(()=> {
             new Intern('Jane Doe', 1, 'test@gmail.com');

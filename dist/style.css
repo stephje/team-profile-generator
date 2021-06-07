@@ -1,0 +1,51 @@
+/* root styles */
+:root {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    --headers: #218380;
+  }
+
+body {
+    margin: 0px;
+}
+
+/* display styles */
+.flex {
+    display: flex;
+}
+
+/* list styles */
+ul {
+    list-style-type: none;
+    margin: 8px;
+    padding: 0px;
+}
+
+li {
+    padding: 2px;
+}
+
+/* header styles */
+header {
+    background-color: var(--headers);
+    color: #ffffff;
+    padding: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+}
+
+h2 {
+    margin: 0px;
+    padding: 2px;
+    font-weight: 400;
+}
+
+/* card styles */
+.card {
+    border: solid;
+    margin: 8px;
+    min-width: 10vw;
+}

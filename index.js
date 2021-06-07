@@ -3,6 +3,7 @@ const Employee = require('./lib/employee.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
 const Manager = require('./lib/manager.js');
+const generateReport = require('./src/generateReport.js')
 
 const employeeArray = [];
 
@@ -105,10 +106,6 @@ async function main() {
     });
     
     if(choice.action === 'EXIT') {
-        //if there is at least one employee in the employee array, generate report (this could occur if user acccidentally goes back to the main menu and then decides to quit without entering any further employees)
-        if(employeeArray.length > 0){
-            generateReport(employeeArray);
-        } 
         return;
     }
     
@@ -133,8 +130,8 @@ main();
 //ii. Write tests for Manager -- DONE
 //iii. Write tests for Intern -- DONE
 //iv. Write tests for Engineer -- DONE
-// 1c. Add the new team member object to a collection of team members
-// 1d. Return the collection of team member objects
+// 1c. Add the new team member object to a collection of team members -- DONE
+// 1d. Return the collection of team member objects -- DONE
 
 //2. Write team report (use cookbook example)
 //Generates an empty report when there are no employees

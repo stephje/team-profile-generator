@@ -48,18 +48,7 @@ const questions = [
     },
 ];
 
-async function main() {
-    
-    const choice = await inquirer.prompt({
-        name: 'action',
-        type: 'list',
-        choices: ['ADD AN EMPLOYEE', 'EXIT'],
-        message: 'What do you want to do?'
-    });
-    
-    if(choice.action === 'EXIT') {
-        return;
-    }
+async function requestEmployeeData() {
 
     const employeeData = await inquirer.prompt(questions);
     console.log(employeeData)
@@ -78,13 +67,31 @@ async function main() {
     ]);
     if (answers.repeat === true) {
         console.log(employeeArray);
-        main();
+        requestEmployeeData();
     } else {
         console.log(employeeArray);
     }
 }
 
+async function main() {
+
+    const choice = await inquirer.prompt({
+        name: 'action',
+        type: 'list',
+        choices: ['ADD AN EMPLOYEE', 'EXIT'],
+        message: 'What do you want to do?'
+    });
+    
+    if(choice.action === 'EXIT') {
+        return;
+    }
+    
+    requestEmployeeData();
+    
+}
+
 main();
+
 
 //TO-DO
 //1. Ask user questions about team members using inquirer, and produce a data structure containing the team's members -- DONE

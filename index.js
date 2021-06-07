@@ -50,11 +50,32 @@ const questions = [
 
 async function requestEmployeeData() {
 
-    const employeeData = await inquirer.prompt(questions);
-    console.log(employeeData)
-    //create new instance of employee
-    //Add to array
-    // employeeArray.push();
+    //prompt user for information about the employee
+    let employeeData = await inquirer.prompt(questions);
+
+    //depending on the role specified by the user, create a new instance of the appropriate class and store in an array
+    switch (employeeData.role) {
+        case 'Employee':
+            let newEmployee = new Employee(employeeData.name, Number(employeeData.id), employeeData.email);
+            employeeArray.push(newEmployee);
+            console.log(employeeArray);
+            break;
+        case 'Manager':
+            let newManager = new Manager(employeeData.name, Number(employeeData.id), employeeData.email, Number(employeeData.office));
+            employeeArray.push(newManager);
+            console.log(employeeArray);
+            break;
+        case 'Engineer':
+            let newEngineer = new Engineer(employeeData.name, Number(employeeData.id), employeeData.email, employeeData.github);
+            employeeArray.push(newEngineer);
+            console.log(employeeArray);
+            break;
+        case 'Intern':
+            let newIntern = new Intern(employeeData.name, Number(employeeData.id), employeeData.email, employeeData.school);
+            employeeArray.push(newIntern);
+            console.log(employeeArray);
+            break;
+    }
 
     //ask if user wants to add another employee
     const answers = await inquirer.prompt([
@@ -66,12 +87,13 @@ async function requestEmployeeData() {
         },
     ]);
     if (answers.repeat === true) {
-        console.log(employeeArray);
         requestEmployeeData();
     } else {
-        console.log(employeeArray);
+        //TO DO - WRITE THIS FUNCTION
+        generateReport(employeeArray);
     }
 }
+
 
 async function main() {
 
@@ -83,6 +105,10 @@ async function main() {
     });
     
     if(choice.action === 'EXIT') {
+        //if there is at least one employee in the employee array, generate report (this could occur if user acccidentally goes back to the main menu and then decides to quit without entering any further employees)
+        if(employeeArray.length > 0){
+            generateReport(employeeArray);
+        } 
         return;
     }
     

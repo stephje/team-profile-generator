@@ -1,4 +1,8 @@
 const inquirer = require('inquirer');
+const Employee = require('./lib/employee.js');
+const Engineer = require('./lib/engineer.js');
+const Intern = require('./lib/intern.js');
+const Manager = require('./lib/manager.js');
 
 const employeeArray = [];
 
@@ -45,8 +49,25 @@ const questions = [
 ];
 
 async function main() {
-    const employee = await inquirer.prompt(questions);
-    employeeArray.push(employee);
+    
+    const choice = await inquirer.prompt({
+        name: 'action',
+        type: 'list',
+        choices: ['ADD AN EMPLOYEE', 'EXIT'],
+        message: 'What do you want to do?'
+    });
+    
+    if(choice.action === 'EXIT') {
+        return;
+    }
+
+    const employeeData = await inquirer.prompt(questions);
+    console.log(employeeData)
+    //create new instance of employee
+    //Add to array
+    // employeeArray.push();
+
+    //ask if user wants to add another employee
     const answers = await inquirer.prompt([
         {
             name: 'repeat',
@@ -66,15 +87,15 @@ async function main() {
 main();
 
 //TO-DO
-//1. Ask user questions about team members using inquirer, and produce a data structure containing the team's members
-// Construct Manager, Intern and Engineer
+//1. Ask user questions about team members using inquirer, and produce a data structure containing the team's members -- DONE
+// Construct Manager, Intern and Engineer -- DONE
 // Use ES6 syntactic sugar instead of functional constructor
 // 1a. Ask user questions to learn about their team -- DONE
 //employee: name id email -- DONE
 // manager: officenumber -- DONE
 // Engineer: github username -- DONE
 // intern: school -- DONE
-// 1b. Using information about each member, construct an object representing a team member (these constructors or classes should have tests)
+// 1b. Using information about each member, construct an object representing a team member (these constructors or classes should have tests) -- DONE
 //i. Write tests for Employee, one test at a time -- DONE
 //ii. Write tests for Manager -- DONE
 //iii. Write tests for Intern -- DONE

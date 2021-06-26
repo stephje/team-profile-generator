@@ -88,7 +88,7 @@ async function requestEmployeeData() {
     } else {
         //TO DO - WRITE THIS FUNCTION
         let generatedReport = generateReport(employeeArray);
-        writeToFile('./dist/index.html', generatedReport);
+        writeToFile('./dist/index2.html', generatedReport);
     }
 }
 

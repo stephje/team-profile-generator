@@ -1,4 +1,5 @@
 
+const prettier = require("prettier");
 const Employee = require("../lib/employee.js");
 const Intern = require("../lib/intern.js");
 const Manager = require("../lib/engineer.js");
@@ -17,7 +18,9 @@ function generateReport(employeeArray) {
         }
     });
 
-    return `
+    const formattedReport = prettier.format(
+`
+    <!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -41,59 +44,17 @@ function generateReport(employeeArray) {
     
         <main>
     
-            <div class="managers flex">
-                <div class="manager card">
-                    <header>
-                        <h2 class="name"></h2>
-                        <h3><i class="fas fa-clipboard-list"></i> Manager</h3>
-                    </header>
-                    <ul>
-                        <li>ID: <span class="id"></span></li>
-                        <li>Email: <span class="email"></span></li>
-                        <li>Office: <span class="office"></span></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <hr>
-    
-            <div class="engineers flex">
-                <div class="engineer card">
-                    <header>
-                        <h2 class="name"></h2>
-                        <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
-                    </header>
-                    <ul>
-                        <li>ID: <span class="id"></span></li>
-                        <li>Email: <span class="email"></span></li>
-                        <li>GitHub: <span class="github"></span></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <hr>
-    
-            <div class="interns flex">
-                <div class="intern card">
-                    <header>
-                        <h2 class="name"></h2>
-                        <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
-                    </header>
-                    <ul>
-                        <li>ID: <span class="id"></span></li>
-                        <li>Email: <span class="email"></span></li>
-                        <li>School: <span class="school"></span></li>
-                    </ul>
-                </div>
-            </div>
-    
         </main>
     
     </body>
     
     </html>
     
-`
+`,
+{ parser: "html" });
+
+return formattedReport;
+
 }
 
 module.exports = generateReport;

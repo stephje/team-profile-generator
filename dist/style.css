@@ -12,6 +12,7 @@ body {
 /* display styles */
 .flex {
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* list styles */
@@ -19,6 +20,11 @@ ul {
     list-style-type: none;
     margin: 8px;
     padding: 0px;
+}
+
+span {
+    font-weight: bold;
+    margin-right: 8px;
 }
 
 li {
@@ -47,12 +53,12 @@ i {
     margin-right: 4px;
 }
 
-
 /* card styles */
 .card {
     border: solid;
     border-color: var(--headers);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
     margin: 8px;
-    min-width: 10vw;
+    min-width: 350px;
+    max-width: 100%;
 }

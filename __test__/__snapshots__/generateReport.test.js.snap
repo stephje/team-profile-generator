@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generateReport generates a report containing a manger when given a manager 1`] = `
+exports[`generateReport generates a report containing employee data when given employee data 1`] = `
 "<!DOCTYPE html>
 <html lang=\\"en\\">
   <head>
@@ -29,7 +29,9 @@ exports[`generateReport generates a report containing a manger when given a mana
 
     <main>
       <div class=\\"managers flex\\"></div>
+      <hr />
       <div class=\\"interns flex\\"></div>
+      <hr />
       <div class=\\"engineers flex\\"></div>
     </main>
   </body>
@@ -66,7 +68,9 @@ exports[`generateReport generates an empty report when there are no employees 1`
 
     <main>
       <div class=\\"managers flex\\"></div>
+      <hr />
       <div class=\\"interns flex\\"></div>
+      <hr />
       <div class=\\"engineers flex\\"></div>
     </main>
   </body>

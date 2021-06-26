@@ -21,9 +21,9 @@ function generateManagerCards(managerArray) {
                 <h3><i class="fas fa-clipboard-list"></i> Manager</h3>
             </header>
             <ul>
-                <li>ID: <span class="id">${id}</span></li>
-                <li>Email: <span class="email">${email}</span></li>
-                <li>Office: <span class="office">${office}</span></li>
+                <li><span>ID:</span>${id}</li>
+                <li><span>Email:</span>${email}</li>
+                <li><span>Office:</span>${office}</li>
             </ul>
             </div>
             `,

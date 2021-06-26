@@ -16,7 +16,7 @@ describe('generateEngineerCards', () => {
             {
                 name: 'Stephanie Jenkins',
                 id: 8,
-                email: 's.jenkins3018@gmail.com',
+                email: 'stephaniejenkins@company.com',
                 github: 'stephje',
             },
         ];
@@ -28,9 +28,9 @@ describe('generateEngineerCards', () => {
                 <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
             </header>
             <ul>
-                <li>ID: <span class="id">8</span></li>
-                <li>Email: <span class="email">s.jenkins3018@gmail.com</span></li>
-                <li>GitHub: <span class="github">stephje</span></li>
+                <li><span>ID:</span>8</li>
+                <li><span>Email:</span>stephaniejenkins@company.com</li>
+                <li><span>GitHub:</span>stephje</li>
             </ul>
             </div>
             `;
@@ -44,13 +44,13 @@ describe('generateEngineerCards', () => {
             {
                 name: 'Stephanie Jenkins',
                 id: 8,
-                email: 's.jenkins3018@gmail.com',
+                email: 'stephaniejenkins@company.com',
                 github: 'stephje',
             },
             {
                 name: 'Jane Doe',
                 id: 5,
-                email: 'janedoe@gmail.com',
+                email: 'janedoe@company.com',
                 github: 'janedoe',
             },
         ];
@@ -62,9 +62,9 @@ describe('generateEngineerCards', () => {
                 <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
             </header>
             <ul>
-                <li>ID: <span class="id">8</span></li>
-                <li>Email: <span class="email">s.jenkins3018@gmail.com</span></li>
-                <li>GitHub: <span class="github">stephje</span></li>
+                <li><span>ID:</span>8</li>
+                <li><span>Email:</span>stephaniejenkins@company.com</li>
+                <li><span>GitHub:</span>stephje</li>
             </ul>
             </div>
             <div class="engineer card">
@@ -73,9 +73,9 @@ describe('generateEngineerCards', () => {
                 <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
             </header>
             <ul>
-                <li>ID: <span class="id">5</span></li>
-                <li>Email: <span class="email">janedoe@gmail.com</span></li>
-                <li>GitHub: <span class="github">janedoe</span></li>
+                <li><span>ID:</span>5</li>
+                <li><span>Email:</span>janedoe@company.com</li>
+                <li><span>GitHub:</span>janedoe</li>
             </ul>
             </div>
             `;

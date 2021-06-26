@@ -21,9 +21,9 @@ function generateInternCards(internArray) {
                 <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
             </header>
             <ul>
-                <li>ID: <span class="id">${id}</span></li>
-                <li>Email: <span class="email">${email}</span></li>
-                <li>School: <span class="school">${school}</span></li>
+                <li><span>ID:</span>${id}</li>
+                <li><span>Email:</span>${email}</li>
+                <li><span>School:</span>${school}</li>
             </ul>
             </div>
             `,

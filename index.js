@@ -1,9 +1,10 @@
+const fs = require('fs');
 const inquirer = require('inquirer');
 const Employee = require('./lib/employee.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js');
 const Manager = require('./lib/manager.js');
-const generateReport = require('./src/generateReport.js')
+const generateReport = require('./utils/generateReport.js')
 
 const employeeArray = [];
 
@@ -26,7 +27,7 @@ const questions = [
     {
         name: 'role',
         type: 'list',
-        choices: ['Employee', 'Manager', 'Engineer', 'Intern'],
+        choices: ['Manager', 'Engineer', 'Intern'],
         message: 'Role: ',
     },
     {
@@ -56,11 +57,6 @@ async function requestEmployeeData() {
 
     //depending on the role specified by the user, create a new instance of the appropriate class and store in an array
     switch (employeeData.role) {
-        case 'Employee':
-            let newEmployee = new Employee(employeeData.name, Number(employeeData.id), employeeData.email);
-            employeeArray.push(newEmployee);
-            console.log(employeeArray);
-            break;
         case 'Manager':
             let newManager = new Manager(employeeData.name, Number(employeeData.id), employeeData.email, Number(employeeData.office));
             employeeArray.push(newManager);
@@ -91,8 +87,19 @@ async function requestEmployeeData() {
         requestEmployeeData();
     } else {
         //TO DO - WRITE THIS FUNCTION
-        generateReport(employeeArray);
+        let generatedReport = generateReport(employeeArray);
+        writeToFile('./dist/index.html', generatedReport);
     }
+}
+
+// Write README file
+function writeToFile(filePath, generatedReport) {
+    //A conditional using a ternary operator. Condition is 'if there is an error', if truthy the error is logged to the console, if falsy then "Success!" is logged to the console
+    fs.writeFile(filePath, generatedReport, err =>
+        err
+            ? console.error(err)
+            : console.log('README.md file generated successfully')
+    );
 }
 
 
@@ -110,7 +117,7 @@ async function main() {
     }
     
     requestEmployeeData();
-    
+
 }
 
 main();

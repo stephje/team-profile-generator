@@ -1,2 +1,2 @@
-const generateReport = require('../src/generateReport.js');
+const generateReport = require('../utils/generateReport.js');
 

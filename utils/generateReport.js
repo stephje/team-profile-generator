@@ -1,4 +1,23 @@
 
+const Employee = require("../lib/employee.js");
+const Intern = require("../lib/intern.js");
+const Manager = require("../lib/engineer.js");
+const Engineer = require("../lib/manager.js");
+
+function generateReport(employeeArray) {
+    console.log("This is the employee array within the generate report function", employeeArray);
+
+    employeeArray.forEach(element => {
+        if (element instanceof Intern) {
+            console.log("Intern", element);
+        } else if (element instanceof Manager) {
+            console.log("Manager", element);
+        } else if (element instanceof Engineer) {
+            console.log("Engineer", element);
+        }
+    });
+
+    return `
     <html lang="en">
 
     <head>
@@ -74,3 +93,7 @@
     
     </html>
     
+`
+}
+
+module.exports = generateReport;

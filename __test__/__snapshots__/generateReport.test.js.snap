@@ -27,7 +27,11 @@ exports[`generateReport generates an empty report when there are no employees 1`
       <h1>Team Profile</h1>
     </header>
 
-    <main></main>
+    <main>
+      <div class=\\"managers flex\\"></div>
+      <div class=\\"interns flex\\"></div>
+      <div class=\\"engineers flex\\"></div>
+    </main>
   </body>
 </html>
 "

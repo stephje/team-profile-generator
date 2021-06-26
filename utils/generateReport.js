@@ -1,6 +1,4 @@
-
 const prettier = require("prettier");
-const Employee = require("../lib/employee.js");
 const Intern = require("../lib/intern.js");
 const Manager = require("../lib/engineer.js");
 const Engineer = require("../lib/manager.js");
@@ -21,10 +19,10 @@ function generateReport(employeeArray) {
             console.log("Manager Array:", managerArray);
         } else if (element instanceof Intern) {
             internArray.push(element);
-            console.log("Intern Array:", managerArray);
+            console.log("Intern Array:", internArray);
         } else if (element instanceof Engineer) {
             engineerArray.push(element);
-            console.log("Engineer Array:", managerArray);
+            console.log("Engineer Array:", engineerArray);
         }
     });
 
@@ -52,8 +50,8 @@ function generateReport(employeeArray) {
     
         <main>
         <div class="managers flex">${generateManagerCards(managerArray)}</div>
-        <div class="interns flex">${generateInternCards(managerArray)}</div>
-        <div class="engineers flex">${generateEngineerCards(managerArray)}</div>
+        <div class="interns flex">${generateInternCards(internArray)}</div>
+        <div class="engineers flex">${generateEngineerCards(engineerArray)}</div>
         
         </main>
     

@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`generateReport generates a report containing a manger when given a manager 1`] = `
+"<!DOCTYPE html>
+<html lang=\\"en\\">
+  <head>
+    <meta charset=\\"UTF-8\\" />
+    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\" />
+    <title>Team Profile</title>
+    <!-- Google Fonts -->
+    <link rel=\\"preconnect\\" href=\\"https://fonts.gstatic.com\\" />
+    <link
+      href=\\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap\\"
+      rel=\\"stylesheet\\"
+    />
+    <link
+      rel=\\"stylesheet\\"
+      href=\\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\\"
+      integrity=\\"sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf\\"
+      crossorigin=\\"anonymous\\"
+    />
+    <link rel=\\"stylesheet\\" href=\\"./style.css\\" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Team Profile</h1>
+    </header>
+
+    <main>
+      <div class=\\"managers flex\\"></div>
+      <div class=\\"interns flex\\"></div>
+      <div class=\\"engineers flex\\"></div>
+    </main>
+  </body>
+</html>
+"
+`;
+
 exports[`generateReport generates an empty report when there are no employees 1`] = `
 "<!DOCTYPE html>
 <html lang=\\"en\\">

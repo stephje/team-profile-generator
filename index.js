@@ -92,13 +92,13 @@ async function requestEmployeeData() {
     }
 }
 
-// Write README file
+// Write file
 function writeToFile(filePath, generatedReport) {
     //A conditional using a ternary operator. Condition is 'if there is an error', if truthy the error is logged to the console, if falsy then "Success!" is logged to the console
     fs.writeFile(filePath, generatedReport, err =>
         err
             ? console.error(err)
-            : console.log('README.md file generated successfully')
+            : console.log('File generated successfully')
     );
 }
 

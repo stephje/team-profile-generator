@@ -6,7 +6,9 @@ const Intern = require('./lib/intern.js');
 const Manager = require('./lib/manager.js');
 const generateReport = require('./utils/generateReport.js')
 
-const employeeArray = [];
+const managerArray = [];
+const internArray = [];
+const engineerArray = [];
 
 const questions = [
     {
@@ -59,18 +61,15 @@ async function requestEmployeeData() {
     switch (employeeData.role) {
         case 'Manager':
             let newManager = new Manager(employeeData.name, Number(employeeData.id), employeeData.email, Number(employeeData.office));
-            employeeArray.push(newManager);
-            console.log(employeeArray);
+            managerArray.push(newManager);
             break;
         case 'Engineer':
             let newEngineer = new Engineer(employeeData.name, Number(employeeData.id), employeeData.email, employeeData.github);
-            employeeArray.push(newEngineer);
-            console.log(employeeArray);
+            engineerArray.push(newEngineer);
             break;
         case 'Intern':
             let newIntern = new Intern(employeeData.name, Number(employeeData.id), employeeData.email, employeeData.school);
-            employeeArray.push(newIntern);
-            console.log(employeeArray);
+            internArray.push(newIntern);
             break;
     }
 
@@ -87,7 +86,7 @@ async function requestEmployeeData() {
         requestEmployeeData();
     } else {
         //TO DO - WRITE THIS FUNCTION
-        let generatedReport = generateReport(employeeArray);
+        let generatedReport = generateReport(managerArray, engineerArray, internArray);
         writeToFile('./dist/index.html', generatedReport);
     }
 }

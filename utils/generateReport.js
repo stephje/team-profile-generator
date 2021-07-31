@@ -6,21 +6,11 @@ const generateManagerCards = require('./generateManagerCards.js');
 const generateInternCards = require('./generateInternCards.js');
 const generateEngineerCards = require('./generateEngineerCards.js');
 
-function generateReport(employeeArray) {
-    let managerArray = [];
-    let internArray = [];
-    let engineerArray = [];
+function generateReport(managerArray, engineerArray, internArray) {
 
-    //separate employee array into three separate arrays based on classes
-    employeeArray.forEach(element => {
-        if (element instanceof Manager) {
-            managerArray.push(element);
-        } else if (element instanceof Intern) {
-            internArray.push(element);
-        } else if (element instanceof Engineer) {
-            engineerArray.push(element);
-        }
-    });
+    console.log("managers:", managerArray)
+    console.log("engineers:", engineerArray)
+    console.log("interns:", internArray)
 
     //Create a report based on template literal. Generate employee cards by invoking generateManagerCards, generateInternCards and generateEngineerCards functions, passing in the appropriate array to each. Format report using prettier.
     const formattedReport = prettier.format(

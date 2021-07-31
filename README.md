@@ -44,4 +44,4 @@ Please ensure that you include the name of this project ("readme-generator") in 
 
 ## Video Walkthrough
 
-Click [here](https://drive.google.com/file/d/1t8DYxcrco1yHBf4_5lzm-UxT4Nh1k0MF/view) to view video walkthrough.
+Click [here](https://drive.google.com/file/d/19gjjt_v7M6_uH3DSaczMexCa2JBqAetA/view) to view video walkthrough.

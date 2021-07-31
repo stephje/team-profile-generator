@@ -22,7 +22,7 @@ function generateManagerCards(managerArray) {
             </header>
             <ul>
                 <li><span>ID:</span>${id}</li>
-                <li><span>Email:</span>${email}</li>
+                <li><span>Email:</span><a href="mailto:${email}">${email}</a></li>
                 <li><span>Office:</span>${office}</li>
             </ul>
             </div>

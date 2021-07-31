@@ -22,8 +22,8 @@ function generateEngineerCards(engineerArray) {
             </header>
             <ul>
                 <li><span>ID:</span>${id}</li>
-                <li><span>Email:</span>${email}</li>
-                <li><span>GitHub:</span>${github}</li>
+                <li><span>Email:</span><a href="mailto:${email}">${email}</a></li>
+                <li><span>GitHub:</span><a href="https://github.com/${github}">${github}</a></li>
             </ul>
             </div>
             `,

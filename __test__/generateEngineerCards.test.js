@@ -11,7 +11,7 @@ describe('generateEngineerCards', () => {
         );
     });
 
-    it('generates a single employee card when given an employee array containing one item', () => {
+    it('generates a single engineer card when given an array containing one item', () => {
         const engineerDetails = [
             {
                 name: 'Stephanie Jenkins',
@@ -22,24 +22,32 @@ describe('generateEngineerCards', () => {
         ];
         const output = generateEngineerCards(engineerDetails);
         const expectedOutput = `
-            <div class="engineer card">
-            <header>
-                <h2 class="name">Stephanie Jenkins</h2>
-                <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>8</li>
-                <li><span>Email:</span>stephaniejenkins@company.com</li>
-                <li><span>GitHub:</span>stephje</li>
-            </ul>
-            </div>
+        <div class="engineer card">
+          <header>
+            <h2 class="name">Stephanie Jenkins</h2>
+            <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>8</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:stephaniejenkins@company.com"
+                >stephaniejenkins@company.com</a
+              >
+            </li>
+            <li>
+              <span>GitHub:</span
+              ><a href="https://github.com/stephje">stephje</a>
+            </li>
+          </ul>
+        </div>
             `;
         expect(output).toEqual(
             prettier.format(expectedOutput, { parser: 'html' })
         );
     });
 
-    it('generates two employee cards when given an employee array containing two items', () => {
+    it('generates two engineer cards when given an array containing two items', () => {
         const engineerDetails = [
             {
                 name: 'Stephanie Jenkins',
@@ -56,28 +64,42 @@ describe('generateEngineerCards', () => {
         ];
         const output = generateEngineerCards(engineerDetails);
         const expectedOutput = `
-            <div class="engineer card">
-            <header>
-                <h2 class="name">Stephanie Jenkins</h2>
-                <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>8</li>
-                <li><span>Email:</span>stephaniejenkins@company.com</li>
-                <li><span>GitHub:</span>stephje</li>
-            </ul>
-            </div>
-            <div class="engineer card">
-            <header>
-                <h2 class="name">Jane Doe</h2>
-                <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>5</li>
-                <li><span>Email:</span>janedoe@company.com</li>
-                <li><span>GitHub:</span>janedoe</li>
-            </ul>
-            </div>
+        <div class="engineer card">
+          <header>
+            <h2 class="name">Stephanie Jenkins</h2>
+            <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>8</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:stephaniejenkins@company.com"
+                >stephaniejenkins@company.com</a
+              >
+            </li>
+            <li>
+              <span>GitHub:</span
+              ><a href="https://github.com/stephje">stephje</a>
+            </li>
+          </ul>
+        </div>
+        <div class="engineer card">
+          <header>
+            <h2 class="name">Jane Doe</h2>
+            <h3><i class="fas fa-laptop-code"></i> Engineer</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>5</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:janedoe@company.com">janedoe@company.com</a>
+            </li>
+            <li>
+              <span>GitHub:</span
+              ><a href="https://github.com/janedoe">janedoe</a>
+            </li>
+          </ul>
+        </div>
             `;
         expect(output).toEqual(
             prettier.format(expectedOutput, { parser: 'html' })

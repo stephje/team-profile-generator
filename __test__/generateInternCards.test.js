@@ -11,7 +11,7 @@ describe('generateInternCards', () => {
         );
     });
 
-    it('generates a single employee card when given an employee array containing one item', () => {
+    it('generates a single intern card when given an array containing one item', () => {
         const internDetails = [
             {
                 name: 'Stephanie Jenkins',
@@ -22,24 +22,29 @@ describe('generateInternCards', () => {
         ];
         const output = generateInternCards(internDetails);
         const expectedOutput = `
-            <div class="intern card">
-            <header>
-                <h2 class="name">Stephanie Jenkins</h2>
-                <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>8</li>
-                <li><span>Email:</span>stephaniejenkins@company.com</li>
-                <li><span>School:</span>UWA</li>
-            </ul>
-            </div>
+        <div class="intern card">
+          <header>
+            <h2 class="name">Stephanie Jenkins</h2>
+            <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>8</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:stephaniejenkins@company.com"
+                >stephaniejenkins@company.com</a
+              >
+            </li>
+            <li><span>School:</span>UWA</li>
+          </ul>
+        </div>
             `;
         expect(output).toEqual(
             prettier.format(expectedOutput, { parser: 'html' })
         );
     });
 
-    it('generates two employee cards when given an employee array containing two items', () => {
+    it('generates two intern cards when given an array containing two items', () => {
         const internDetails = [
             {
                 name: 'Stephanie Jenkins',
@@ -56,28 +61,36 @@ describe('generateInternCards', () => {
         ];
         const output = generateInternCards(internDetails);
         const expectedOutput = `
-            <div class="intern card">
-            <header>
-                <h2 class="name">Stephanie Jenkins</h2>
-                <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>8</li>
-                <li><span>Email:</span>stephaniejenkins@company.com</li>
-                <li><span>School:</span>UWA</li>
-            </ul>
-            </div>
-            <div class="intern card">
-            <header>
-                <h2 class="name">Jane Doe</h2>
-                <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
-            </header>
-            <ul>
-                <li><span>ID:</span>5</li>
-                <li><span>Email:</span>janedoe@company.com</li>
-                <li><span>School:</span>ECU</li>
-            </ul>
-            </div>
+        <div class="intern card">
+          <header>
+            <h2 class="name">Stephanie Jenkins</h2>
+            <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>8</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:stephaniejenkins@company.com"
+                >stephaniejenkins@company.com</a
+              >
+            </li>
+            <li><span>School:</span>UWA</li>
+          </ul>
+        </div>
+        <div class="intern card">
+          <header>
+            <h2 class="name">Jane Doe</h2>
+            <h3><i class="fas fa-graduation-cap"></i> Intern</h3>
+          </header>
+          <ul>
+            <li><span>ID:</span>5</li>
+            <li>
+              <span>Email:</span
+              ><a href="mailto:janedoe@company.com">janedoe@company.com</a>
+            </li>
+            <li><span>School:</span>ECU</li>
+          </ul>
+        </div>
             `;
         expect(output).toEqual(
             prettier.format(expectedOutput, { parser: 'html' })
